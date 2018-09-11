@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Image } from '../../models/image';
 
 @Component({
   selector: 'ng-image',
@@ -14,10 +15,13 @@ img:hover {
   filter: gray; /* IE6-9 */
   -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
 }
+a:hover{
+  cursor: pointer;
+}
 `]
 })
 export class ImageComponent implements OnInit {
-
+  @Input() image: Image;
   constructor() { }
 
   ngOnInit() {
